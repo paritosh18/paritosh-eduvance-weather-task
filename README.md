@@ -28,6 +28,8 @@ npm run server-json
 ```
 npm start 
 ```
+5)set up port
+```
 while starting the react-app it will say your port is running on 3000 beacuse the json server is running on 3000, so click on the option run react-app on another port click yes . 
 
 all these steps to Run Project.
