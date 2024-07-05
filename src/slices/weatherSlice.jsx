@@ -23,6 +23,7 @@ const weatherSlice = createSlice({
     logoutUser: (state) => {
       state.loggedInUser = null;
       localStorage.removeItem('loggedInUser');
+      localStorage.removeItem('weatherData');
     },
     registerUser: (state, action) => {
       console.log('New user registered:', action.payload);
