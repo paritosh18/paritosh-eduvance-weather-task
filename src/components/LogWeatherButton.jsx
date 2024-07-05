@@ -37,6 +37,7 @@ const LogWeatherButton = () => {
 
   return (
     <div className="container-log">
+      <div className='logweatherbutton'>
       <input
         type="text"
         value={city}
@@ -44,6 +45,7 @@ const LogWeatherButton = () => {
         placeholder="Enter city"
       />
       <button onClick={handleLogWeather}>Log Weather Data</button>
+      </div>
       {weatherData && (
         <div>
           <p>City: {weatherData.city}</p>
