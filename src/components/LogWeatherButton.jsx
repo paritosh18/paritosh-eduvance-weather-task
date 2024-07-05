@@ -52,7 +52,7 @@ const LogWeatherButton = () => {
           <p>Humidity: {weatherData.humidity}%</p>
           <p>Wind Speed: {weatherData.windSpeed} m/s</p>
           <p>Wind Degree: {weatherData.windDegree}°</p>
-          <p>Logged at: {new Date(weatherData.timestamp).toLocaleString()}</p>
+        
         </div>
       )}
     </div>
