@@ -7,15 +7,14 @@ const WeatherList = () => {
   const currentUser = useSelector(state => state.weather.loggedInUser);
   const dispatch = useDispatch();
 
-  const handleDelete = (index) => {
-    dispatch(deleteWeatherData(index));
+  const handleDelete = (id) => {
+    dispatch(deleteWeatherData(id));
   };
 
   if (!currentUser) {
     return <p>Please log in to view your weather data.</p>;
   }
 
- 
   const userWeatherData = weatherData.filter(data => data.userId === currentUser.id);
 
   return (
@@ -24,10 +23,10 @@ const WeatherList = () => {
         <div>
           <h2>Weather Data List</h2>
           <ul>
-            {userWeatherData.map((data, index) => (
-              <li key={index}>
-                {data.city} - {data.temperature}°C, {data.pressure} hPa, {data.humidity}%, {data.windSpeed} m/s, {data.windDegree}°
-                <button onClick={() => handleDelete(index)}>Delete</button>
+            {userWeatherData.map((data) => (
+              <li key={data.id}>
+                {data.city} - {data.temperature}°C, {data.pressure} hPa, {data.humidity}%, {data.windSpeed} m/s, {data.windDegree}°, Logged at: {new Date(data.timestamp).toLocaleString()}
+                <button onClick={() => handleDelete(data.id)}>Delete</button>
               </li>
             ))}
           </ul>

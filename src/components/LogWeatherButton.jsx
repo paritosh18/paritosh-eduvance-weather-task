@@ -15,7 +15,8 @@ const LogWeatherButton = () => {
       interval = setInterval(async () => {
         const data = await fetchWeatherData(city);
         if (data) {
-          setWeatherData({ ...data, userId: currentUser.id });
+          const timestamp = new Date().toISOString();
+          setWeatherData({ ...data, userId: currentUser.id, timestamp });
         }
       }, 2000);
     }
@@ -51,6 +52,7 @@ const LogWeatherButton = () => {
           <p>Humidity: {weatherData.humidity}%</p>
           <p>Wind Speed: {weatherData.windSpeed} m/s</p>
           <p>Wind Degree: {weatherData.windDegree}°</p>
+          <p>Logged at: {new Date(weatherData.timestamp).toLocaleString()}</p>
         </div>
       )}
     </div>
