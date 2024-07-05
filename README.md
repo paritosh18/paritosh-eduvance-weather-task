@@ -26,6 +26,7 @@ npm run server-json
 ```
  4)start react-app
 ```
+open new powershell or terminal and check you are in weather-app directory on or not the. run command 
 npm start 
 ```
 5)set up port
